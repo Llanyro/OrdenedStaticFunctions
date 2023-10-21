@@ -19,6 +19,10 @@ class LL_SHARED_LIB StaticFunctionDataAccessBase {
 		std::map<const void*, void*> data;
 	public:
 		StaticFunctionDataAccessBase();
+		StaticFunctionDataAccessBase(const StaticFunctionDataAccessBase& other) = delete;
+		StaticFunctionDataAccessBase& operator=(const StaticFunctionDataAccessBase& other) = delete;
+		StaticFunctionDataAccessBase(StaticFunctionDataAccessBase&& other);
+		StaticFunctionDataAccessBase& operator=(StaticFunctionDataAccessBase&& other);
 		~StaticFunctionDataAccessBase();
 		// Adds to manager a function to indentify and data to return when requested
 		virtual ll_bool_t add(void* function, void* data);

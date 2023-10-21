@@ -11,6 +11,13 @@ namespace llcpp {
 namespace static_manager {
 
 StaticFunctionDataAccessBase::StaticFunctionDataAccessBase() : data() {}
+StaticFunctionDataAccessBase::StaticFunctionDataAccessBase(StaticFunctionDataAccessBase&& other)
+	: data(std::move(other.data)) {}
+StaticFunctionDataAccessBase& StaticFunctionDataAccessBase::operator=(StaticFunctionDataAccessBase&& other) {
+	this->data.clear();
+	this->data = std::move(other.data);
+	return *this;
+}
 StaticFunctionDataAccessBase::~StaticFunctionDataAccessBase() {}
 
 ll_bool_t StaticFunctionDataAccessBase::add(void* function, void* data) {
