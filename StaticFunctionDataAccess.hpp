@@ -26,7 +26,7 @@ namespace monothread {
 *	
 *	You can use this in multithread programs if you are not going to delete any data(function)
 */
-class StaticFunctionData : public SFDAB, public Singleton<StaticFunctionData> {
+class LL_SHARED_LIB StaticFunctionData : public SFDAB, public Singleton<StaticFunctionData> {
 	#pragma region Singleton
 	private:
 		friend class Singleton<StaticFunctionData>;
@@ -44,7 +44,7 @@ namespace multithread {
 *
 *	Remember that you can use monothread mode if you are not going to delete any data(function)
 */
-class StaticFunctionData : public SFDAB, public Singleton<StaticFunctionData> {
+class LL_SHARED_LIB StaticFunctionData : public SFDAB, public Singleton<StaticFunctionData> {
 	#pragma region Singleton
 	private:
 		friend class Singleton<StaticFunctionData>;

@@ -14,7 +14,7 @@
 namespace llcpp {
 namespace static_manager {
 
-class StaticFunctionDataAccessBase {
+class LL_SHARED_LIB StaticFunctionDataAccessBase {
 	private:
 		std::map<const void*, void*> data;
 	public:
